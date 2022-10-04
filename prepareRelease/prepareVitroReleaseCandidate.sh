@@ -30,8 +30,6 @@ ECHO ">>>" mvn -Dmessage="[maven-scm-plugin] prepare release ${Vitro_TAG}-${RC_V
 mvn -Dmessage="[maven-scm-plugin] prepare release ${Vitro_TAG}-${RC_VERSION}" scm:checkin -DpushChanges=false
 ECHO ">>>" mvn -Dtag="${Vitro_TAG}-${RC_VERSION}" scm:tag -DpushChanges=false
 mvn -Dtag="${Vitro_TAG}-${RC_VERSION}" scm:tag -DpushChanges=false
-ECHO ">>>" sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/Vitro.git/${Vitro_REPO}.git/g" ../../prepareRelease/VitroTemplateRelease.properties > ./release.properties
-sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/Vitro.git/${Vitro_REPO}.git/g" ../../prepareRelease/VitroTemplateRelease.properties > ./release.properties
 ECHO ">>>" mvn versions:set -DgenerateBackupPoms=false -DnewVersion=${RC_NEXT_SNAPSHOT}-SNAPSHOT
 mvn versions:set -DgenerateBackupPoms=false -DnewVersion=${RC_NEXT_SNAPSHOT}-SNAPSHOT
 ECHO ">>>" cd installer

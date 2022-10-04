@@ -8,9 +8,9 @@ ECHO ">>>" cd ${Vitro_languages_REPO}
 cd ${Vitro_languages_REPO}
 ECHO ">>>" git push --delete origin "${Vitro_languages_TAG}-${RC_VERSION}"
 git push --delete origin "${Vitro_languages_TAG}-${RC_VERSION}"
-ECHO ">>>" git tag -d "rel-${RC_VERSION}-RC-${Vitro_languages_RC_NUM}"
+ECHO ">>>" git push --delete origin "rel-${RC_VERSION}-RC-${Vitro_languages_RC_NUM}"
 git push --delete origin "rel-${RC_VERSION}-RC-${Vitro_languages_RC_NUM}"
-ECHO ">>>" git branch -d "rel-${RC_VERSION}-RC"
+ECHO ">>>" git push --delete origin "rel-${RC_VERSION}-RC"
 git push --delete origin "rel-${RC_VERSION}-RC"
 ECHO ">>>" git checkout -b rel-${RC_VERSION}-RC
 git checkout -b rel-${RC_VERSION}-RC

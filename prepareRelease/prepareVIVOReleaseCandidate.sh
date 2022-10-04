@@ -30,8 +30,6 @@ ECHO ">>>" mvn -Dmessage="[maven-scm-plugin] prepare release ${VIVO_TAG}-${RC_VE
 mvn -Dmessage="[maven-scm-plugin] prepare release ${VIVO_TAG}-${RC_VERSION}" scm:checkin -DpushChanges=false
 ECHO ">>>" mvn -Dtag="${VIVO_TAG}-${RC_VERSION}" scm:tag -DpushChanges=false
 mvn -Dtag="${VIVO_TAG}-${RC_VERSION}" scm:tag -DpushChanges=false
-ECHO ">>>" sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/VIVO.git/${VIVO_REPO}.git/g" ../../prepareRelease/VIVOTemplateRelease.properties > ./release.properties
-sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/VIVO.git/${VIVO_REPO}.git/g" ../../prepareRelease/VIVOTemplateRelease.properties > ./release.properties
 ECHO ">>>" mvn versions:set -DgenerateBackupPoms=false -DnewVersion=${RC_NEXT_SNAPSHOT}-SNAPSHOT
 mvn versions:set -DgenerateBackupPoms=false -DnewVersion=${RC_NEXT_SNAPSHOT}-SNAPSHOT
 ECHO ">>>" cd installer
