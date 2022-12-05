@@ -3,7 +3,7 @@
 
 export RC_TARGET_DIR=RC
 export ORG=chenejac
-export ORG_ACCESS_TOKEN=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
+export ORG_ACCESS_TOKEN=XXXXXXXX
 export BRANCH=main
 export RC_VERSION=1.16.0
 export RC_VERSION_MINOR=1.16
