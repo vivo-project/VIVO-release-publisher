@@ -14,7 +14,7 @@ You can test publishing process over forked version of vivo-project repositories
 ## Preparing release candidate ##
 1. Open a bash (Git bash or Linux terminal)
 1. Run [./prepareReleaseCandidate.sh](./prepareReleaseCandidate.sh)
-1. Check whether a new branch and new tag are created in each repository (VIVO, Vitro, VIVO-languages, Vitro-languages)
+1. Check whether a new branch and new tag are created in both repositories (VIVO and Vitro)
 1. Create a wiki page with release candidate testing instructions (you can copy [this one](https://wiki.lyrasis.org/vivo/interest-groups/development-interest-group/vivo-release-process/release-testing-1-13-0))
 1. Announce in the VIVO dissemination channels (mailing lists, Slack channels) that new release candidate is published, define deadline in the announcement for testing and providing feedback
 
@@ -22,8 +22,6 @@ You can test publishing process over forked version of vivo-project repositories
 1. If some requests or important issues have been noticed since the moment of making announcement in the point 5 in the section above, consider with VIVO tech group fixing that and publishing the new release candidate (2, 3, 4, ...). If there is no, go to the next point.
 1. Run [./publishRelease.sh](./publishRelease.sh)
 1. Check new release in the GitHub repositories
-   1. https://github.com/vivo-project/Vitro-languages/releases/
-   1. https://github.com/vivo-project/VIVO-languages/releases/
    1. https://github.com/vivo-project/Vitro/releases/
    1. https://github.com/vivo-project/VIVO/releases/
 1. Complete publishing process via sonatype
