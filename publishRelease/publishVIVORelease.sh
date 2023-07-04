@@ -5,7 +5,7 @@ ECHO -----------------------------${VIVO_REPO}---------------------------------
 
 ECHO ">>>" generate github release
 
-ECHO ">>>" curl -H "Authorization: Bearer ${ORG_ACCESS_TOKEN}"\
+ECHO ">>>" curl -H "Authorization: Bearer ${PERSONAL_ACCESS_TOKEN}"\
 	--data '{"tag_name": "'${VIVO_TAG}'-'${RC_VERSION}'",
                 "target_commitish": "'${BRANCH}'",
                 "name": "Release '${VIVO_TAG}'-'${RC_VERSION}'",
@@ -14,7 +14,7 @@ ECHO ">>>" curl -H "Authorization: Bearer ${ORG_ACCESS_TOKEN}"\
                 "prerelease": false,
                 "generate_release_notes":true}' \
     https://api.github.com/repos/${ORG}/${VIVO_REPO}/releases
-curl -H "Authorization: Bearer ${ORG_ACCESS_TOKEN}"\
+curl -H "Authorization: Bearer ${PERSONAL_ACCESS_TOKEN}"\
 	--data '{"tag_name": "'${VIVO_TAG}'-'${RC_VERSION}'",
                 "target_commitish": "'${BRANCH}'",
                 "name": "Release '${VIVO_TAG}'-'${RC_VERSION}'",

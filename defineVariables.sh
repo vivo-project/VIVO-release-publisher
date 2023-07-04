@@ -2,13 +2,13 @@
 # RC define common variables Script
 
 export RC_TARGET_DIR=RC
-export ORG=chenejac
-export ORG_ACCESS_TOKEN=XXXXXXXX
+export ORG=vivo-project
+export PERSONAL_ACCESS_TOKEN=XXXXXXXX
 export BRANCH=main
-export RC_VERSION=1.16.0
-export RC_VERSION_MINOR=1.16
-export RC_NEXT_SNAPSHOT=1.16.1
-RC_NUM=1
+export RC_VERSION=1.14.0
+export RC_VERSION_MINOR=1.14
+export RC_NEXT_SNAPSHOT=1.14.1
+RC_NUM=5
 
 export Vitro_REPO=Vitro
 export Vitro_TAG=vitro
