@@ -2,6 +2,10 @@
 # VIVO publishing release Script
 
 ECHO -----------------------------${VIVO_REPO}---------------------------------
+ECHO ">>>" mkdir ${VIVO_REPO}
+mkdir ${VIVO_REPO}
+ECHO ">>>" cd ${VIVO_REPO}
+cd ${VIVO_REPO}
 
 ECHO ">>>" generate github release
 
@@ -24,6 +28,7 @@ curl -H "Authorization: Bearer ${PERSONAL_ACCESS_TOKEN}"\
                 "generate_release_notes":true}' \
     https://api.github.com/repos/${ORG}/${VIVO_REPO}/releases
 
+
 ECHO ">>>" generate sonatype release
 
 ECHO ">>>" git clone --branch ${VIVO_TAG}-${RC_VERSION} --single-branch git@github.com:${ORG}/${VIVO_REPO}.git
@@ -31,11 +36,11 @@ git clone --branch ${VIVO_TAG}-${RC_VERSION} --single-branch git@github.com:${OR
 ECHO ">>>" cd ${VIVO_REPO}
 cd ${VIVO_REPO}
 
-ECHO ">>>" sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/VIVO.git/${VIVO_REPO}.git/g" ../../publishRelease/VIVOTemplateRelease.properties > ./release.properties
-sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/VIVO.git/${VIVO_REPO}.git/g" ../../publishRelease/VIVOTemplateRelease.properties > ./release.properties
+ECHO ">>>" sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/VIVO.git/${VIVO_REPO}.git/g" ../../../publishRelease/VIVOTemplateRelease.properties > ./release.properties
+sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/VIVO.git/${VIVO_REPO}.git/g" ../../../publishRelease/VIVOTemplateRelease.properties > ./release.properties
 
 ECHO ">>>" mvn release:perform -DperformRelease -Dgoals=deploy -e -Darguments="-Dcheckstyle.skip=true"
-mvn release:perform -DperformRelease -Dgoals=deploy -e -Darguments="-Dcheckstyle.skip=true"
+mvn release:perform -DperformRelease -Dgoals=deploy -e -Darguments="-Dcheckstyle.skip=true"	
 
-ECHO ">>>" cd ..
-cd ..
+ECHO ">>>" cd ../..
+cd ../..
