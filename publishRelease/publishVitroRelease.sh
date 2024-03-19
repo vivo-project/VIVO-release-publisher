@@ -1,12 +1,6 @@
 #!/bin/bash
 # Vitro publishing release Script
 
-ECHO -----------------------------${Vitro_REPO}---------------------------------
-ECHO ">>>" mkdir ${Vitro_REPO}
-mkdir ${Vitro_REPO}
-ECHO ">>>" cd ${Vitro_REPO}
-cd ${Vitro_REPO}
-
 ECHO ">>>" generate github release
 
 ECHO ">>>" curl -H "Authorization: Bearer ${PERSONAL_ACCESS_TOKEN}"\
@@ -36,8 +30,8 @@ git clone --branch ${Vitro_TAG}-${RC_VERSION} --single-branch git@github.com:${O
 ECHO ">>>" cd ${Vitro_REPO}
 cd ${Vitro_REPO}
 
-ECHO ">>>" sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/Vitro.git/${Vitro_REPO}.git/g" ../../../publishRelease/VitroTemplateRelease.properties > ./release.properties
-sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/Vitro.git/${Vitro_REPO}.git/g" ../../../publishRelease/VitroTemplateRelease.properties > ./release.properties
+ECHO ">>>" sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/Vitro.git/${Vitro_REPO}.git/g" ../../publishRelease/VitroTemplateRelease.properties > ./release.properties
+sed "s/1.12.1/${RC_VERSION}/g;s/1.12.2/${RC_NEXT_SNAPSHOT}/g;s/vivo-project/${ORG}/g;s/Vitro.git/${Vitro_REPO}.git/g" ../../publishRelease/VitroTemplateRelease.properties > ./release.properties
 
 ECHO ">>>" mvn release:perform -DperformRelease -Dgoals=deploy -e -Darguments="-Dcheckstyle.skip=true"
 mvn release:perform -DperformRelease -Dgoals=deploy -e -Darguments="-Dcheckstyle.skip=true"
