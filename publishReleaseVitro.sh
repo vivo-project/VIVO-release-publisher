@@ -1,5 +1,6 @@
 #!/bin/bash
 # release publishing Script
+set -e
 
 source ./defineVariables.sh
 
