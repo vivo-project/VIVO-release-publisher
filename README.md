@@ -23,40 +23,26 @@ You can test publishing process over forked version of vivo-project repositories
 1. Run [./publishReleaseVitro.sh](./publishReleaseVitro.sh)
 1. Check new release in the Vitro GitHub repository
    1. https://github.com/vivo-project/Vitro/releases/
-1. Complete publishing process via sonatype
-    1. Go to https://oss.sonatype.org/index.html (Nexus Repository Manager)
-    1. Click on Log In (Top Right Corner) and use your ossrh id from your settings.xml file
-    1. Click Staging Repositories in left navigation under Build Promotion which will open a new tab
-    1. Search for "vivoweb" in upper right search box (project will not have $REPO in title)
-    1. Select repository and verify that $REPO is present in the Content tab
-        1. Look for the correct types as well - war, pom, jar, md5, asc, etc.
-            1. Note there is sometimes a delay on larger files showing in the Repo.
-    1. Click Close, then Refresh, then Release
-    1. After a few moments click into the search under Artifact Search in the left navigation and type "vivoweb"
-    1. A new Search tab will appear with all of the org.vivoweb Release artifacts
-    1. Verify that the new release versions are now listed
-        1. Note there is sometimes a delay on larger files showing in the Repo.
-    1. This will publish the artifacts to the Sonatype releases repository and start the process of syncing them with Maven Central, which may take several hours. When finished, they'll be available at http://repo1.maven.org/maven2/org/vivoweb.
+1. Complete publishing process via central sonatype repository
+   1. Go to https://central.sonatype.com/ (Maven Central Repository)
+   1. Click on Log In (Top Right Corner) and use your central sonatype id from your settings.xml file
+   1. Click Publish in top right corner and click on Deployments
+   1. Check whether everything looks ok  - war, pom, jar, md5, asc, etc.
+   1. If everything is ok, Click on Publish (otherwise Click on Drop and fix the issue and start releasing process again) 
+   1. In a couple of minutes, new artefacts will be available at https://repo1.maven.org/maven2/org/vivoweb.
 
 ## Publishing a VIVO release ##
 1. Wait until the Vitro release is available in the maven repository (http://repo1.maven.org/maven2/org/vivoweb). This make take several hours or one day. 
 1. Run [./publishReleaseVIVO.sh](./publishReleaseVIVO.sh)
 1. Check new release in the VIVO GitHub repository
     1. https://github.com/vivo-project/VIVO/releases/
-1. Complete publishing process via sonatype
-    1. Go to https://oss.sonatype.org/index.html (Nexus Repository Manager)
-    1. Click on Log In (Top Right Corner) and use your ossrh id from your settings.xml file
-    1. Click Staging Repositories in left navigation under Build Promotion which will open a new tab
-    1. Search for "vivoweb" in upper right search box (project will not have $REPO in title)
-    1. Select repository and verify that $REPO is present in the Content tab
-        1. Look for the correct types as well - war, pom, jar, md5, asc, etc.
-            1. Note there is sometimes a delay on larger files showing in the Repo.
-    1. Click Close, then Refresh, then Release
-    1. After a few moments click into the search under Artifact Search in the left navigation and type "vivoweb"
-    1. A new Search tab will appear with all of the org.vivoweb Release artifacts
-    1. Verify that the new release versions are now listed
-        1. Note there is sometimes a delay on larger files showing in the Repo.
-    1. This will publish the artifacts to the Sonatype releases repository and start the process of syncing them with Maven Central, which may take several hours. When finished, they'll be available at http://repo1.maven.org/maven2/org/vivoweb.
+1. Complete publishing process via central sonatype repository
+    1. Go to https://central.sonatype.com/ (Maven Central Repository)
+    1. Click on Log In (Top Right Corner) and use your central sonatype id from your settings.xml file 
+    1. Click Publish in top right corner and click on Deployments
+    1. Check whether everything looks ok  - war, pom, jar, md5, asc, etc.
+    1. If everything is ok, Click on Publish (otherwise Click on Drop and fix the issue and start releasing process again) 
+    1. In a couple of minutes, new artefacts will be available at https://repo1.maven.org/maven2/org/vivoweb.
 1. Make release announcement and update technical documentation at [wiki](https://wiki.lyrasis.org/vivo/community-pages/releases)
 1. Distribute the message that new release has been published
 
